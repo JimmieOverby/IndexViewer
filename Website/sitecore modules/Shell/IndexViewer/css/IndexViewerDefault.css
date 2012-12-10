@@ -1,0 +1,129 @@
+﻿BODY {
+  overflow: auto;
+  height:1%;
+}
+
+* { zoom: 1;}
+
+.ErrorText
+{
+  color: #FF0000;
+  font-weight: bold;
+}
+
+.ButtonSelector
+{
+  background-color: #DDD;
+  border: solid 1px #000;
+  padding: 0px;
+  width:100px;
+}
+
+.ButtonSelectorSelected
+{
+  background-color: #EEE;
+  border: solid 1px #000;
+  border-bottom: solid 1px #EEE;
+  padding: 0px;
+  width:100px;
+}
+
+
+/* Welcome message - start */
+
+.WelcomeMessage
+{
+  text-align: center;
+  background-color: #EEE;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+
+
+.WelcomeMessage .Information
+{
+  padding-bottom: 40px;
+  font-size: 1.2em;
+}
+
+.WelcomeMessage .ContactInformation
+{
+  font-size: 0.8em;
+  color: #999;
+}
+
+.WelcomeMessage .ContactInformation a
+{
+  color: #999;
+}
+/* Welcome message - end */
+
+
+.OverviewValue
+{
+  font-weight: bold;
+}
+
+
+.Selector
+{
+  width: 200px;
+}
+
+.SelectIndexButton
+{
+	width:100px;
+}
+
+.IterateButton
+{
+  width: 30px;
+}
+
+.GoButton
+{
+  width: 30px;
+}
+
+.SearchButton
+{
+  width:100px;
+}
+
+.mGrid {   
+	width: 100%;   
+	background-color: #fff;   
+	margin: 5px 0 10px 0;   
+	border: solid 1px #525252;   
+	border-collapse:collapse;   
+}  
+
+.mGrid td {   
+	padding: 2px;   
+	border: solid 1px #c1c1c1;   
+	color: #717171;
+}  
+
+.mGrid th {   
+	padding: 4px 2px;   
+	color: #fff;   
+	background-color: #424242;   
+	border-left: solid 1px #525252;   
+	font-size: 0.9em;   
+}  
+
+.mGrid .alt { background-color:#E0E0FF; }  
+.mGrid .pgr { background-color: #424242; }  
+.mGrid .pgr table { margin: 5px 0; }  
+.mGrid .pgr td {   
+	border-width: 0;   
+	padding: 0 6px;   
+	border-left: solid 1px #666;   
+	font-weight: bold;   
+	color: #fff;   
+	line-height: 12px;   
+}     
+
+.mGrid .pgr a { color: #666; text-decoration: none; }  
+.mGrid .pgr a:hover { color: #000; text-decoration: none; }  

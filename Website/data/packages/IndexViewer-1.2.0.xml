@@ -1,0 +1,94 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>IndexViewer</PackageName>
+      <Author>Jens Mikkelsen</Author>
+      <Version>1.2.0</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher>Pentia A/S</Publisher>
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Include/IndexViewer.config</x-item>
+        <x-item>/bin/IndexViewer.dll</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/css/IndexViewerDefault.css</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/css/Ribbon.css</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/DocumentsOverview.ascx</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/IndexOverview.ascx</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/MainForm.aspx</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/Search.ascx</x-item>
+        <x-item>/sitecore modules/Shell/IndexViewer/SelectIndex.aspx</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>files</Name>
+    </xfiles>
+    <xitems>
+      <Entries>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/{B59E1A5C-F8A3-4302-8DC0-A694E33437C0}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/{146ECBF5-8A0C-463C-985A-F2DBBC1E2275}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/{B7B5CF25-24A8-4126-A2DE-584A2E7B944D}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/ExitChunk/{FAA0859B-6840-4194-9CF0-AEA739C7DBBD}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/ExitChunk/ExitButton/{C746B27A-FD12-4579-8613-8002BE1640A6}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/IndexChunk/{322E9AA0-6690-461F-B8F9-22BBE7EB631D}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/IndexChunk/CloseButton/{8A3FCC86-2E95-4F3C-B081-5EF4AF6A3157}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/IndexChunk/OpenButton/{B241129D-A6FC-46F5-B476-C882873712AF}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/OptimizationChunk/{0217777F-510C-4658-9268-C1E903347274}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/OptimizationChunk/OptimizeButton/{EBDAB7C4-D91E-4D41-A4FA-EF8B57D66EEE}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/IndexViewer/Ribbon/MainStrip/OptimizationChunk/Rebuild/{44CF2395-E262-4142-81FD-D3C65CB6AF42}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Documents and settings/All users/Start menu/Right/IndexViewer/{015AEE68-EE87-45C1-B195-D6631FEB4758}/invariant/0</x-item>
+        <x-item>/core/sitecore/layout/Layouts/Applications/IndexViewer/{AEF91F23-EB71-47B1-8827-4B4A53C2C793}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Items</Name>
+    </xitems>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

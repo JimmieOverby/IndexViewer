@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
 using System.Reflection;
 using System.Collections;
-using System.IO;
 
 namespace IndexViewer
 {
@@ -61,7 +50,7 @@ namespace IndexViewer
                 {
                     try
                     {
-                        return reader.GetFieldNames(IndexReader.FieldOption.ALL);
+                        return (ICollection) reader.GetFieldNames(IndexReader.FieldOption.ALL);
                     }
                     finally
                     {

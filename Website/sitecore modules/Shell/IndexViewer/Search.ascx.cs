@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Web.UI.WebControls;
-using Sitecore.Data;
-using Sitecore.Data.Indexing;
 
 
 namespace IndexViewer

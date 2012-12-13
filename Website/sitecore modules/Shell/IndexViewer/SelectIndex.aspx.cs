@@ -1,31 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
 
 namespace IndexViewer
 {
-    using Sitecore;
-    using Sitecore.Data.Indexing;
     using Sitecore.Configuration;
-    using Sitecore.Data;
-    using Sitecore.Data.Items;
-    using Sitecore.Web;
-    using Sitecore.Web.UI.WebControls;
-    using Sitecore.Diagnostics;
-    using Sitecore.Web.UI.WebControls.Ribbons;
-    using Sitecore.Shell.Framework.Commands;
-    using Sitecore.Web.UI.XamlSharp.Ajax;
-    using Sitecore.Web.UI.Sheer;
     using Sitecore.Globalization;
 
 

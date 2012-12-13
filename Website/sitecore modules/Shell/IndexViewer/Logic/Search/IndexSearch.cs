@@ -3,8 +3,6 @@ using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
-using Sitecore.Data;
-using Sitecore.Data.Indexing;
 using Sitecore.Diagnostics;
 
 namespace IndexViewer

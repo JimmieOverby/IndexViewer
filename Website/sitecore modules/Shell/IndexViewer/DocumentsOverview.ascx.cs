@@ -1,7 +1,4 @@
 ﻿using System;
-using Lucene.Net.Documents;
-using Sitecore.Data;
-using Sitecore.Data.Indexing;
 using Lucene.Net.Index;
 
 namespace IndexViewer.sitecore_modules.Shell.IndexViewer

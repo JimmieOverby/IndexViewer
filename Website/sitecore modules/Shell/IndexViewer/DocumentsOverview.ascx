@@ -1,5 +1,4 @@
-﻿<%@ Import Namespace="System.Linq"%>
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentsOverview.ascx.cs" Inherits="IndexViewer.sitecore_modules.Shell.IndexViewer.DocumentsOverview" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentsOverview.ascx.cs" Inherits="IndexViewer.sitecore_modules.Shell.IndexViewer.DocumentsOverview" %>
 
 
 <div style="margin:10px;">

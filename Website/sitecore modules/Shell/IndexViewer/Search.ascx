@@ -1,8 +1,4 @@
-﻿<%@ Import Namespace="IndexViewer"%>
-<%@ Import Namespace="System.Collections.Generic"%>
-<%@ Import Namespace="Lucene.Net.Documents"%>
-
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="IndexViewer.Search" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="IndexViewer.Search" %>
 
 <div style="margin:10px;">
 

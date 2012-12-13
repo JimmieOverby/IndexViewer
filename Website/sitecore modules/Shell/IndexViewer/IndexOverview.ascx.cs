@@ -1,6 +1,4 @@
 ﻿using System;
-using Sitecore.Data.Indexing;
-using Sitecore.Data;
 
 
 namespace IndexViewer

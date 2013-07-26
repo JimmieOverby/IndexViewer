@@ -85,7 +85,7 @@
                               If you have any problems or feature request contact me at:<br /><br />
                               Jens Mikkelsen<br />
                               Pentia A/S<br />
-                              <a href="mailto:jm@pentia.dk">jm@pentia.dk</a><br /><br />                                    
+                              <a href="mailto:jm@pentia.dk">jm@pentia.dk</a>test<br /><br />                                    
                             </div>                    
                         </div>
                     </asp:View>

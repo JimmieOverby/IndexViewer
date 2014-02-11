@@ -64,19 +64,33 @@ namespace IndexViewer
         private IIndex _currentIndex = null;
 
         
-        public SearchResultCollection SearchResult 
+        public LuceneSearchResultCollection LuceneSearchResult 
         {
             get
             {
-                return _searchResult;
+                return _luceneSearchResult;
             }
             set
             {
-                _searchResult = value;
+                _luceneSearchResult = value;
                 HttpContext.Current.Session[_sessionManagerInSession] = this;
             }
         }
-        private SearchResultCollection _searchResult = null;
+        private LuceneSearchResultCollection _luceneSearchResult = null;
+
+        public SitecoreSearchResultCollection SitecoreSearchResult
+        {
+            get
+            {
+                return _sitecoreSearchResult;
+            }
+            set
+            {
+                _sitecoreSearchResult = value;
+                HttpContext.Current.Session[_sessionManagerInSession] = this;
+            }
+        }
+        private SitecoreSearchResultCollection _sitecoreSearchResult = null;
 
 
         public int CurrentDocumentNumber
@@ -129,7 +143,8 @@ namespace IndexViewer
         public void ClearAll()
         {
             _currentIndex = null;
-            _searchResult = null;
+            _luceneSearchResult = null;
+            _sitecoreSearchResult = null;
             _currentDocumentNumber = 0;
 
             HttpContext.Current.Session[_sessionManagerInSession] = null;
@@ -143,7 +158,8 @@ namespace IndexViewer
 
         public void ClearSearchResult()
         {
-            _searchResult = null;
+            _luceneSearchResult = null;
+            _sitecoreSearchResult = null;
             HttpContext.Current.Session[_sessionManagerInSession] = this;
         }
 

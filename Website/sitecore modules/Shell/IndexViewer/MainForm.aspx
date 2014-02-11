@@ -5,6 +5,8 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.HtmlControls" Assembly="Sitecore.Kernel" %>
 <%@ Register TagPrefix="sc" Assembly="Sitecore.Kernel" Namespace="Sitecore.Web.UI.WebControls" %>
 <%@ Register TagPrefix="sc" Assembly="Sitecore.Kernel" Namespace="Sitecore.Web.UI.WebControls.Ribbons" %>
+<%@ Register Src="~/sitecore modules/Shell/IndexViewer/DynamicLinq.ascx" TagPrefix="IndexViewer" TagName="DynamicLinq" %>
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,7 +16,8 @@
     <title>Untitled Page</title>
     
     <sc:Stylesheet Src="Content Manager.css" DeviceDependant="true" runat="server" />
-
+    
+    <link rel="stylesheet" type="text/css" href="/sitecore modules/Shell/IndexViewer/css/jquery-ui.css"/>
     <link rel="Stylesheet" type="text/css" href="/sitecore modules/Shell/IndexViewer/css/Ribbon.css" /> 
     <link rel="Stylesheet" type="text/css" href="/sitecore modules/Shell/IndexViewer/css/IndexViewerDefault.css" /> 
 
@@ -53,7 +56,7 @@
     <sc:Ribbon ID="Ribbon" runat="server" />
     
     <div class="ErrorText" style="color:Red " ID="ErrorInfo" runat="server">&nbsp;</div>
-    
+        
     <table cellpadding="0" cellspacing="0" style="margin:5px; width:99%; height:100%;">
         <tr>
             <td>
@@ -65,6 +68,8 @@
                 </asp:Button>
                 <asp:Button id="SearchButton" OnClick="SearchButton_Click" CssClass="ButtonSelector" runat="server" 
                     Text="Search">
+                </asp:Button>            
+                <asp:Button id="LinqButton" CssClass="ButtonSelector" runat="server" Text="LINQ" OnClick="LinqButton_Click">
                 </asp:Button>            
             </td>
         </tr>
@@ -84,8 +89,8 @@
                             <div class="ContactInformation">
                               If you have any problems or feature request contact me at:<br /><br />
                               Jens Mikkelsen<br />
-                              Pentia A/S<br />
-                              <a href="mailto:jm@pentia.dk">jm@pentia.dk</a><br /><br />                                    
+                              Inmento Solutions<br />
+                              <a href="mailto:jm@inmento.dk">jm@inmento.dk</a><br /><br />                                    
                             </div>                    
                         </div>
                     </asp:View>
@@ -113,6 +118,15 @@
                             <tr>
                                 <td>
                                     <IndexViewer:Search ID="SearchControl" runat="server"/>        
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:View>
+                    <asp:View ID="LinqTab" runat="server">
+                        <table cellspacing="0" style="width:100%; height:100%; background-color:#EEE;">
+                            <tr>
+                                <td>
+                                    <IndexViewer:DynamicLinq runat="server" ID="DynamicLinq" />
                                 </td>
                             </tr>
                         </table>

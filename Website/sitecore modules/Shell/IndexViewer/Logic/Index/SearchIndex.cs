@@ -9,6 +9,7 @@ namespace IndexViewer
     using Lucene.Net.Index;
     using Lucene.Net.Search;
     using Lucene.Net.Store;
+    using System.Collections.Generic;
 
 
     public class SearchIndex : BaseIndex
@@ -32,6 +33,14 @@ namespace IndexViewer
 
         #region public properties
 
+        public override IndexReader Reader
+        {
+            get
+            {
+                return CreateReader();
+            }
+        }
+
         public override string Name
         {
             get
@@ -40,25 +49,13 @@ namespace IndexViewer
             }
         }
 
-        public override ICollection Fields
+        public override ICollection<string> Fields
         {
             get
             {
-                IndexReader reader = CreateReader();
+                IndexReader reader = Reader;//CreateReader();
 
-                if (reader != null)
-                {
-                    try
-                    {
-                        return (ICollection) reader.GetFieldNames(IndexReader.FieldOption.ALL);
-                    }
-                    finally
-                    {
-                        reader.Close();
-                    }
-                }
-
-                return null;
+                return reader.GetFieldNames(IndexReader.FieldOption.ALL);
             }
         }
 
@@ -66,12 +63,10 @@ namespace IndexViewer
 
         #region public methods
 
-        public override IndexReader CreateReader()
+        public IndexReader CreateReader()
         {
-            MethodInfo methodInfo = typeof(Index).GetMethod("CreateReader",
-                    BindingFlags.NonPublic | BindingFlags.Instance);
-
-            return methodInfo.Invoke(_index, null) as IndexReader;            
+            IndexReader reader = DirectoryReader.Open(this._index.Directory, true);
+            return reader;
         }
 
         public override IndexSearcher CreateSearcher()

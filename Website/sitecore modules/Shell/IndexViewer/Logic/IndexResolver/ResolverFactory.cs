@@ -17,26 +17,16 @@ namespace IndexViewer
 
     public static class ResolverFactory
     {
+             
         public static IIndexResolver GetIndexResolver(IndexType indexType)
         {
-            return GetIndexResolver(indexType, String.Empty);
-        }
-        
-        public static IIndexResolver GetIndexResolver(IndexType indexType, string databaseName)
-        {
-            if (indexType == IndexType.DataIndex && 
-                String.IsNullOrEmpty(databaseName))
-            {
-                Log.Error("Parameter 'Database name' must not be empty", typeof(ResolverFactory));
-                throw new ArgumentNullException("databaseName", "Parameter 'Database name' must not be empty");
-            }
-
+            
             switch (indexType)
             {
                 case IndexType.SearchIndex :
                     return new SearchIndexResolver();
-                case IndexType.DataIndex:
-                    return new DataIndexResolver(databaseName);
+                case IndexType.ContentSearch:
+                    return new ContentSearchResolver();
             }
             
             return null;

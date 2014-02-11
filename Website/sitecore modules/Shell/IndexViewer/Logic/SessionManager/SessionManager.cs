@@ -9,6 +9,8 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using Sitecore.ContentSearch.SearchTypes;
+using IndexViewer.Logic.DynamicLinq;
 
 namespace IndexViewer
 {
@@ -78,6 +80,19 @@ namespace IndexViewer
         }
         private SearchResultCollection _searchResult = null;
 
+        private string _currentRebuildingJobUrl;
+        public string CurrentRebuildingJobUrl
+        {
+            get
+            {
+                return _currentRebuildingJobUrl;
+            }
+            set
+            {
+                _currentRebuildingJobUrl = value;
+                HttpContext.Current.Session[_sessionManagerInSession] = this;
+            }
+        }
 
         public int CurrentDocumentNumber
         {
@@ -106,6 +121,7 @@ namespace IndexViewer
         }
         private int _currentDocumentNumber;
 
+        public LinqSearchResult<SearchResultItem> LinqSearchResults { get; set; }
 
         public Exception LastError
         {

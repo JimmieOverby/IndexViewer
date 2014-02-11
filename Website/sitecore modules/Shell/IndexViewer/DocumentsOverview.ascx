@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentsOverview.ascx.cs" Inherits="IndexViewer.sitecore_modules.Shell.IndexViewer.DocumentsOverview" %>
+﻿<%@ Import Namespace="System.Linq"%>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentsOverview.ascx.cs" Inherits="IndexViewer.sitecore_modules.Shell.IndexViewer.DocumentsOverview" %>
 
 
 <div style="margin:10px;">
@@ -37,15 +38,15 @@
         <ItemTemplate>
           <tr>
             <td style="text-align:center; width:30px;"><%# Container.ItemIndex %></td>
-            <td><%# (Container.DataItem as Lucene.Net.Documents.Field).Name()%></td>
-            <td style="white-space:normal;"><%# (Container.DataItem as Lucene.Net.Documents.Field).StringValue()%></td>
+            <td><%# (Container.DataItem as Lucene.Net.Documents.Field).Name%></td>
+            <td style="white-space:normal;"><%# (Container.DataItem as Lucene.Net.Documents.Field).StringValue%></td>
           </tr>
         </ItemTemplate>
         <AlternatingItemTemplate>
           <tr class="alt">
             <td style="text-align:center; width:30px;"><%# Container.ItemIndex %></td>
-            <td><%# (Container.DataItem as Lucene.Net.Documents.Field).Name()%></td>
-            <td style="white-space:normal;"><%# (Container.DataItem as Lucene.Net.Documents.Field).StringValue()%></td>
+            <td><%# (Container.DataItem as Lucene.Net.Documents.Field).Name%></td>
+            <td style="white-space:normal;"><%# (Container.DataItem as Lucene.Net.Documents.Field).StringValue%></td>
           </tr>
         </AlternatingItemTemplate>
       </asp:Repeater>

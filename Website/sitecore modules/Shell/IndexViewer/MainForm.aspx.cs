@@ -6,6 +6,7 @@ using Sitecore.Diagnostics;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.XamlSharp.Ajax;
 using Sitecore.Web.UI.Sheer;
+using IndexViewer.sitecore_modules.Shell.IndexViewer.Logic.Index;
 
 namespace IndexViewer
 {
@@ -192,6 +193,19 @@ namespace IndexViewer
             }
         }
 
+        protected void LinqButton_Click(object sender, EventArgs e)
+        {
+            if (SessionManager.Instance.CurrentIndex != null)
+            {
+                ShowLINQ();
+            }
+            else
+            {
+                IndexTabs.ActiveViewIndex = 0;
+                SetViewButtonActive(false);
+            }
+        }
+
         protected void AjaxScriptManager_OnExecute(object sender, AjaxCommandEventArgs args)
         {
             Assert.ArgumentNotNull(sender, "sender");
@@ -290,6 +304,10 @@ namespace IndexViewer
             OverviewButton.Enabled = value;
             DocumentsButton.Enabled = value;
             SearchButton.Enabled = value;
+            if (SessionManager.Instance.CurrentIndex != null && SessionManager.Instance.CurrentIndex is ContentSearchIndex)
+                LinqButton.Enabled = value;
+            else
+                LinqButton.Enabled = false;
         }
 
 
@@ -307,6 +325,7 @@ namespace IndexViewer
             OverviewButton.CssClass = "ButtonSelectorSelected";
             DocumentsButton.CssClass = "ButtonSelector";
             SearchButton.CssClass = "ButtonSelector";
+            LinqButton.CssClass = "ButtonSelector";
         }
 
         //----------------------------------------------------------------------------------
@@ -322,6 +341,7 @@ namespace IndexViewer
             OverviewButton.CssClass = "ButtonSelector";
             DocumentsButton.CssClass = "ButtonSelectorSelected";
             SearchButton.CssClass = "ButtonSelector";
+            LinqButton.CssClass = "ButtonSelector";
         }
 
         //----------------------------------------------------------------------------------
@@ -336,10 +356,22 @@ namespace IndexViewer
             OverviewButton.CssClass = "ButtonSelector";
             DocumentsButton.CssClass = "ButtonSelector";
             SearchButton.CssClass = "ButtonSelectorSelected";
+            LinqButton.CssClass = "ButtonSelector";
+        }
+
+        private void ShowLINQ()
+        {
+            IndexTabs.ActiveViewIndex = 4;
+            OverviewButton.CssClass = "ButtonSelector";
+            DocumentsButton.CssClass = "ButtonSelector";
+            SearchButton.CssClass = "ButtonSelector";
+            LinqButton.CssClass = "ButtonSelectorSelected";
         }
 
 
         #endregion
+
+        
 
 
     }

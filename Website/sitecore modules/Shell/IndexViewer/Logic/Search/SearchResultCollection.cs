@@ -5,6 +5,7 @@ using System.Data;
 using Lucene.Net.Documents;
 using Lucene.Net.Search;
 
+
 namespace IndexViewer
 {
     /// <summary>
@@ -22,7 +23,7 @@ namespace IndexViewer
         /// <param name="timeElapsed">The time elapsed.</param>
         /// <remark>Created 02/02/2009 15:15 by jm</remark>
         //----------------------------------------------------------------------------------
-        public SearchResultCollection(Hits hits, double timeElapsed)
+        public SearchResultCollection(IList<Document> hits, double timeElapsed)
         {
             SearchResultHits    = hits;
             TimeElapsed         = timeElapsed;
@@ -39,7 +40,7 @@ namespace IndexViewer
         /// <value>The search result hits.</value>
         /// <remark>Created 02/02/2009 15:15 by jm</remark>
         //----------------------------------------------------------------------------------
-        public Hits SearchResultHits { get; private set; }
+        public IList<Document> SearchResultHits { get; private set; }
 
         //----------------------------------------------------------------------------------
         /// <summary>
@@ -61,12 +62,12 @@ namespace IndexViewer
         /// <returns></returns>
         /// <remark>Created 02/02/2009 15:19 by jm</remark>
         //----------------------------------------------------------------------------------
-        public DataTable AsDataTable(ICollection fields)
+        public DataTable AsDataTable(ICollection<String> fields)
         {
             return AsDataTable(fields, false);
         }
         
-        public DataTable AsDataTable(ICollection fields, bool excludeEmpty)
+        public DataTable AsDataTable(ICollection<String> fields, bool excludeEmpty)
         {
             DataTable table = new DataTable();
             
@@ -85,31 +86,29 @@ namespace IndexViewer
         }
 
 
-        private void AddColumns2Table(DataTable table, ICollection fields)
+        private void AddColumns2Table(DataTable table, ICollection<String> fields)
         {
             table.Columns.Add("No", typeof(string));
 
             foreach (var fieldTitle in fields)
             {
-                table.Columns.Add(fieldTitle as string, typeof(string));
+                table.Columns.Add(fieldTitle, typeof(string));
             }
         }
 
-        private void AddRows2Table(DataTable table, ICollection fields)
+        private void AddRows2Table(DataTable table, ICollection<String> fields)
         {
-            for (int i = 0; i < SearchResultHits.Length(); i++)
+            for (int i = 0; i < SearchResultHits.Count; i++)
             {
                 List<string> values = new List<string> { i.ToString() };
-                
                 foreach (var fieldTitle in fields)
                 {
-                    Field field = SearchResultHits.Doc(i).GetField(fieldTitle as string);
-
+                    Field field = SearchResultHits[i].GetField(fieldTitle);
                     values.Add(field != null 
-                                    ? field.StringValue() 
+                                    ? field.StringValue
                                     : String.Empty);
                 }
-
+            
                 table.Rows.Add(values.ToArray());
             }
         }

@@ -116,7 +116,8 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer
         //----------------------------------------------------------------------------------
         private void BindDocumentToGrid(int documentNumber)
         {
-            IndexReader reader = SessionManager.Instance.CurrentIndex.CreateReader();
+            IndexReader reader = SessionManager.Instance.CurrentIndex.Reader;
+            reader.Reopen();
 
             if (reader != null)
             {
@@ -127,7 +128,7 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer
                 }
                 finally
                 {
-                    reader.Close();
+                    reader.Dispose();
                 }
             }
         }

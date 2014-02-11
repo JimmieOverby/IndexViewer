@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Lucene.Net.Analysis.Standard;
+using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
@@ -62,16 +64,16 @@ namespace IndexViewer
             }
 
             HighResTimer timer = new HighResTimer(true);
-            Hits hits = GetSearchHits(fieldName, searchString, queryType);
+            IList<Document> hits = GetSearchHits(fieldName, searchString, queryType);
 
             return hits != null
                     ? new SearchResultCollection(hits, timer.Elapsed())
                     : null;
         }
 
-        private Hits GetSearchHits(string fieldName, string searchString, string queryType)
+        private IList<Document> GetSearchHits(string fieldName, string searchString, string queryType)
         {
-            Hits hits = null;
+            IList<Document> hits = null;
             Lucene.Net.Search.IndexSearcher searcher = Index.CreateSearcher();
 
             try
@@ -108,12 +110,20 @@ namespace IndexViewer
         /// <returns></returns>
         /// <remark>Created 10/02/2009 17:29 by jm</remark>
         //----------------------------------------------------------------------------------
-        private Hits QueryParserSearch(IndexSearcher searcher, string field, string searchTerm)
+        private IList<Document> QueryParserSearch(IndexSearcher searcher, string field, string searchTerm)
         {
-            QueryParser parser = new QueryParser(field, new StandardAnalyzer());
+            QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, field, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
             Query query = parser.Parse(QueryParser.Escape(searchTerm));
 
-            return searcher.Search(query);
+            TopDocs docs = searcher.Search(query, Int32.MaxValue);
+            IList<Document> hits = new List<Document>();
+            foreach (var searchDoc in docs.ScoreDocs)
+            {
+                var doc = searcher.Doc(searchDoc.Doc);
+                hits.Add(doc);
+            }
+
+            return hits;
         }
 
         //----------------------------------------------------------------------------------
@@ -126,12 +136,20 @@ namespace IndexViewer
         /// <returns></returns>
         /// <remark>Created 10/02/2009 17:22 by jm</remark>
         //----------------------------------------------------------------------------------
-        private Hits PrefixSearch(IndexSearcher searcher, string field, string searchTerm)
+        private IList<Document> PrefixSearch(IndexSearcher searcher, string field, string searchTerm)
         {
             Term term = new Term(field, searchTerm);
             Query query = new PrefixQuery(term);
 
-            return searcher.Search(query);
+            TopDocs docs = searcher.Search(query, Int32.MaxValue);
+            IList<Document> hits = new List<Document>();
+            foreach (var searchDoc in docs.ScoreDocs)
+            {
+                var doc = searcher.Doc(searchDoc.Doc);
+                hits.Add(doc);
+            }
+
+            return hits;
         }
 
         //----------------------------------------------------------------------------------
@@ -144,12 +162,20 @@ namespace IndexViewer
         /// <returns></returns>
         /// <remark>Created 10/02/2009 17:24 by jm</remark>
         //----------------------------------------------------------------------------------
-        private Hits WildCardSearch(IndexSearcher searcher, string field, string searchTerm)
+        private IList<Document> WildCardSearch(IndexSearcher searcher, string field, string searchTerm)
         {
             Term term = new Term(field, searchTerm);
             Query query = new WildcardQuery(term);
 
-            return searcher.Search(query);
+            TopDocs docs = searcher.Search(query, Int32.MaxValue);
+            IList<Document> hits = new List<Document>();
+            foreach (var searchDoc in docs.ScoreDocs)
+            {
+                var doc = searcher.Doc(searchDoc.Doc);
+                hits.Add(doc);
+            }
+
+            return hits;
         }
 
         //----------------------------------------------------------------------------------
@@ -162,12 +188,20 @@ namespace IndexViewer
         /// <returns></returns>
         /// <remark>Created 10/02/2009 17:26 by jm</remark>
         //----------------------------------------------------------------------------------
-        private Hits TermSearch(IndexSearcher searcher, string field, string searchTerm)
+        private IList<Document> TermSearch(IndexSearcher searcher, string field, string searchTerm)
         {
             Term term = new Term(field, searchTerm);
             Query query = new TermQuery(term);
+            
+            TopDocs docs = searcher.Search(query, Int32.MaxValue);
+            IList<Document> hits = new List<Document>();
+            foreach (var searchDoc in docs.ScoreDocs)
+            {
+                var doc = searcher.Doc(searchDoc.Doc);
+                hits.Add(doc);
+            }
 
-            return searcher.Search(query);
+            return hits;
         }
 
         #endregion

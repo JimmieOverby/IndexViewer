@@ -14,7 +14,7 @@ namespace IndexViewer
 {
     public enum IndexType
     {
-        DataIndex,
+        ContentSearch,
         SearchIndex
     }
 }

@@ -16,6 +16,7 @@ namespace IndexViewer
     using Lucene.Net.Index;
     using Lucene.Net.Search;
     using Lucene.Net.Store;
+    using System.Collections.Generic;
     
     public interface IIndex
     {
@@ -25,17 +26,17 @@ namespace IndexViewer
         
         string Name { get; }
         
-        ICollection Fields { get; }
+        ICollection<String> Fields { get; }
 
         #endregion properties
 
         #region methods
 
-        IndexReader CreateReader();
+        IndexReader Reader {get;}
         
         IndexSearcher CreateSearcher();
         
-        Directory CreateDirectory();
+        
         
         int GetDocumentCount();
         

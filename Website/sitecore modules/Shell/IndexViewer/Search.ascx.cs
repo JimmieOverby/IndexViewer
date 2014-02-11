@@ -30,7 +30,7 @@ namespace IndexViewer
                 else
                 {
                     SetSearchInfoValues(SessionManager.Instance.SearchResult.TimeElapsed,
-                                        SessionManager.Instance.SearchResult.SearchResultHits.Length());
+                                        SessionManager.Instance.SearchResult.SearchResultHits.Count);
 
                     SearchResultGrid.DataSource = SessionManager.Instance.SearchResult.AsDataTable(SessionManager.Instance.CurrentIndex.Fields, ExcludeEmptyField.Checked);
                     SearchResultGrid.DataBind();

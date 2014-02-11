@@ -16,7 +16,8 @@ namespace IndexViewer
 {
     using Lucene.Net.Index;
     using Lucene.Net.Search;
-    using Lucene.Net.Store;    
+    using Lucene.Net.Store;
+    using System.Collections.Generic;    
     
     public abstract class BaseIndex : IIndex
     {
@@ -24,9 +25,9 @@ namespace IndexViewer
         
         public abstract string Name { get; }
 
-        public abstract ICollection Fields { get; }
+        public abstract ICollection<String> Fields { get; }
 
-        public abstract IndexReader CreateReader();
+        public abstract IndexReader Reader{get;}
 
         public abstract IndexSearcher CreateSearcher();
 
@@ -37,6 +38,7 @@ namespace IndexViewer
         public abstract void Rebuild();
 
         public abstract void Optimize();
+
 
         #endregion
 
@@ -50,8 +52,7 @@ namespace IndexViewer
 
             if (directory != null)
             {
-                return Sitecore.IO.FileUtil.MapPath(
-                                Sitecore.IO.FileUtil.MakePath(directory.GetFile().DirectoryName, directory.GetFile().Name));
+                return directory.Directory.FullName;
             }
 
             return String.Empty;
@@ -86,7 +87,7 @@ namespace IndexViewer
         {
             if (this.Searcher != null)
             {
-                this.Searcher.Close();
+                this.Searcher.Dispose();
                 this.Searcher = null;
             }
         }

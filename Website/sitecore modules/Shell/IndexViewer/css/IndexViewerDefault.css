@@ -126,4 +126,57 @@
 }     
 
 .mGrid .pgr a { color: #666; text-decoration: none; }  
-.mGrid .pgr a:hover { color: #000; text-decoration: none; }  
+.mGrid .pgr a:hover { color: #000; text-decoration: none; }
+
+.linqArea {
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* Syntax highlighting*/
+.codeArea .darkblue {
+    color: blue;
+}
+
+.codeArea .lightblue {
+    color: #9dbeff;
+}
+
+.codeArea .darkred {
+    color:darkred;
+}
+
+.codeArea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: white;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    
+}
+
+.errorArea {
+    color: red;
+}
+
+#WhereStatementBox {
+    width:70%;
+}
+
+.searchTypeTextBox {
+    width: 64%;
+}
+/* Syntax highlighting end*/
+/* autocomplete */
+.ui-helper-hidden-accessible {
+    display:none;
+}
+
+
+/* autocomplete - end*/

@@ -1,4 +1,8 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="IndexViewer.Search" %>
+﻿<%@ Import Namespace="IndexViewer"%>
+<%@ Import Namespace="System.Collections.Generic"%>
+<%@ Import Namespace="Lucene.Net.Documents"%>
+
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="IndexViewer.Search" %>
 
 <div style="margin:10px;">
 
@@ -30,23 +34,23 @@
     <hr style="width:100%;"/>
 
     <div style="margin-top:2px; margin-bottom:2px; width:100%;"><h3>Search results:</h3></div>
-        <div>
-            Time elapsed for search: <b><asp:Label ID="TimeElapsedLabel" runat="server"></asp:Label></b>
-        </div>
-        <div>
-            Total hits: <b><asp:Label ID="TotalHitsLabel" runat="server"></asp:Label></b>
-        </div>
+    <div>
+        Time elapsed for search: <b><asp:Label ID="TimeElapsedLabel" runat="server"></asp:Label></b>
+    </div>
+    <div>
+        Total hits: <b><asp:Label ID="TotalHitsLabel" runat="server"></asp:Label></b>
+    </div>
     
-        <asp:GridView ID="SearchResultGrid" runat="server" 
-                AllowPaging="True" 
-                onpageindexchanging="SearchResultGrid_PageIndexChanging" 
-                PageSize="15"
-                CssClass="mGrid"
-                PagerStyle-CssClass="pgr"
-                AlternatingRowStyle-CssClass="alt"
-                >
-            <PagerStyle CssClass="PagerLinks" />
-        </asp:GridView>
+    <asp:GridView ID="SearchResultGrid" runat="server" 
+            AllowPaging="True" 
+            onpageindexchanging="SearchResultGrid_PageIndexChanging" 
+            PageSize="15"
+            CssClass="mGrid"
+            PagerStyle-CssClass="pgr"
+            AlternatingRowStyle-CssClass="alt"
+            >
+        <PagerStyle CssClass="PagerLinks" />
+    </asp:GridView>
 
 
     <br/>

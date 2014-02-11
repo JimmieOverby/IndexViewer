@@ -48,11 +48,11 @@ namespace IndexViewer
                 {
                     SessionManager.Instance.ClearAll();
 
-                    IIndexResolver resolver = ResolverFactory.GetIndexResolver(IndexType, DatabaseSelector.SelectedValue);
+                    IIndexResolver resolver = ResolverFactory.GetIndexResolver(IndexType);
 
                     SessionManager.Instance.CurrentIndex = resolver.GetIndex(IndexSelector.SelectedValue);
 
-                    Response.Write("<script language='javascript'>window.close();</script>");
+                    Response.Write("<script language='javascript'>window.top.dialogClose();</script>");
                 }
                 else
                 {
@@ -70,7 +70,7 @@ namespace IndexViewer
         {
             try
             {
-                Response.Write("<script language='javascript'>window.close();</script>");
+                Response.Write("<script language='javascript'>window.top.dialogClose();</script>");
             }
             catch (Exception ex)
             {
@@ -87,44 +87,7 @@ namespace IndexViewer
 
                 if (!String.IsNullOrEmpty(IndexTypeSelector.SelectedValue))
                 {
-                    if (IndexType == IndexType.DataIndex)
-                    {
-                        InitilizeDatabaseSelector();
-
-                        DatabaseSelector.Enabled = true;
-                        DatabaseSelectorPanel.Visible = true;
-                    }
-                    else
-                    {
-                        InitilizeIndexSelector();
-
-                        DatabaseSelector.Enabled = false;
-                        DatabaseSelectorPanel.Visible = false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorResolver.ResolveError(ex, this);
-            }
-        }
-
-
-        protected void DatabaseSelector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                SessionManager.Instance.ClearAll();
-                OKButton.Enabled = false;
-                
-                if (String.IsNullOrEmpty(DatabaseSelector.SelectedValue))
-                {
-                    IndexSelector.Items.Clear();
-                    IndexSelector.Enabled = false;
-                }
-                else
-                {
-                    InitilizeIndexSelector();
+                   InitilizeIndexSelector();
                 }
             }
             catch (Exception ex)
@@ -142,7 +105,7 @@ namespace IndexViewer
 
                 if (!String.IsNullOrEmpty(IndexSelector.SelectedValue))
                 {
-                    IIndexResolver resolver = ResolverFactory.GetIndexResolver(IndexType, DatabaseSelector.SelectedValue);
+                    IIndexResolver resolver = ResolverFactory.GetIndexResolver(IndexType);
 
                     SessionManager.Instance.CurrentIndex = resolver.GetIndex(IndexSelector.SelectedValue);
 
@@ -174,21 +137,12 @@ namespace IndexViewer
             }
         }
 
-        private void InitilizeDatabaseSelector()
-        {
-            DatabaseSelector.Items.Add(new ListItem(String.Empty, null));
-
-            foreach (string dbName in Factory.GetDatabaseNames())
-            {
-                DatabaseSelector.Items.Add(new ListItem(dbName, dbName));
-            }
-        }
-
+        
         private void InitilizeIndexSelector()
         {
             IndexSelector.Items.Clear();
 
-            IIndexResolver resolver = ResolverFactory.GetIndexResolver(IndexType, DatabaseSelector.SelectedValue);
+            IIndexResolver resolver = ResolverFactory.GetIndexResolver(IndexType);
 
             List<string> indexNames = resolver.GetIndexNames();
             indexNames.Insert(0, String.Empty);
@@ -201,9 +155,6 @@ namespace IndexViewer
 
         private void ResetSelectors()
         {
-            DatabaseSelector.Items.Clear();
-            DatabaseSelector.Enabled = false;
-
             IndexSelector.Items.Clear();
             IndexSelector.Enabled = false;
         }

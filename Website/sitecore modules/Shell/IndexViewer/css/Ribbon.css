@@ -1,0 +1,1080 @@
+﻿.scRibbon {
+  padding: 0px 4px 3px 2px;
+  vertical-align: top;
+}
+
+.scRibbon a {
+  text-decoration: none;
+}
+
+.scRibbon a:hover .header {
+  text-decoration: underline;
+}
+
+.scRibbonNavigator {
+  margin-left: 4px;
+}
+
+.scRibbonNavigatorEmpty {
+  height: 1px;
+}
+
+.scRibbonNavigatorButtonsGroup,
+.scRibbonNavigatorButtonsContextualGroup {
+  float: left;
+  padding: 0px 1px;
+  margin: 0px 2px 0px 0px;
+}
+
+.scRibbonNavigatorButtonsGroupHeader,
+.scRibbonNavigatorButtonsContextualGroupHeader {
+  float: left;
+  color: white;
+  padding: 2px 12px;
+  height: 20px;
+  white-space: nowrap;
+}
+
+.scRibbonNavigatorButtonsGroupHeader {
+  text-overflow: ellipsis;
+  color: white;
+  font: 9pt tahoma;
+}
+
+.scRibbonNavigatorButtonsGroupButtons,
+.scRibbonNavigatorButtonsContextualGroupButtons {
+  clear: left;
+  float: left;
+}
+
+.scRibbonNavigatorButtonsContextualGroup {
+  background: url(/sitecore/shell/themes/standard/images/Ribbon/ContextualTabBackground.png) repeat-x; /* FF: has quotes around url, which I don't think we need here */
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsNormal,
+.scRibbon a.scRibbonNavigatorButtonsActive,
+.scRibbon a.scRibbonNavigatorButtonsContextualNormal,
+.scRibbon a.scRibbonNavigatorButtonsContextualActive {
+  float: left;
+  color: white;
+  cursor: default;
+  height: 16px;
+  padding: 1px 12px 0px 12px;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsNormal:active,
+.scRibbon a.scRibbonNavigatorButtonsNormal:hover {
+  background: #ffde59 url(/sitecore/shell/themes/standard/images/RibbonButtonHover.png) repeat-x;
+  border: 1px solid #999999;
+  border-bottom: none;
+  padding: 0px 11px;
+  text-decoration: underline;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsActive {
+  background: #d9dbe1 url(/sitecore/shell/themes/standard/images/RibbonNavigatorButtonActive.png) repeat-x;
+  border: 1px solid white;
+  border-bottom: none;
+  color: black;
+  padding: 0px 11px;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsContextualNormal:active,
+.scRibbon a.scRibbonNavigatorButtonsContextualNormal:hover {
+  background: #ffde59 url(/sitecore/shell/themes/standard/images/RibbonButtonHover.png) repeat-x;
+  border: 1px solid #999999;
+  border-bottom: none;
+  padding: 0px 11px;
+  text-decoration: underline;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsContextualActive {
+  background: #d9dbe1 url(/sitecore/shell/themes/standard/images/RibbonNavigatorContextualButtonActive.png) repeat-x;
+  border: 1px solid #c2c2c2;
+  border-bottom: none;
+  color: black;
+  padding: 0px 11px;
+}
+
+.scRibbonToolbar {
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid black;
+  height: 66px;
+  clear: left;
+}
+
+.scRibbonToolbarStrip, .scRibbonToolbarContextualStrip {
+  height: 66px;
+  background: #ccd2e8 url(/sitecore/shell/themes/standard/images/RibbonToolbarStrip.png) repeat;
+}
+
+.scRibbonToolbarContextualStrip {
+  background-image: url(/sitecore/shell/themes/standard/images/RibbonToolbarContextualStrip.png);
+}
+
+.scRibbon .chunk {
+  background: #ccd2e8 url(/sitecore/shell/themes/standard/images/RibbonToolbarChunk.png) repeat;
+  border: 2px groove #f0f0f0;
+  height: 58px;
+  float: left;  
+  margin: 2px 1px;
+  white-space: nowrap;
+}
+
+.scRibbon .chunk:hover,
+.scRibbon .chunkHover {
+  background-image: url(/sitecore/shell/themes/standard/images/RibbonToolbarChunkHover.png);
+}
+
+.scRibbon .contextualChunk {
+  background-image: url(/sitecore/shell/themes/standard/images/RibbonToolbarContextualChunk.png);
+}
+
+.scRibbon .chunk .panel {
+  color: black;
+  height: 44px;
+  padding: 0px;
+  white-space: nowrap;
+}
+
+.scRibbon .chunk .caption {
+  clear: left;
+  color: white;
+  height: 14px;
+  padding: 0px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon .chunk .caption a {
+  height: 14px;
+  color: white;
+}
+
+.scRibbon .chunk .caption a:active, 
+.scRibbon .chunk .caption a:hover {
+  color: #ffe589;
+}
+
+.scRibbon .chunk .caption .glyph {
+  width: 15px;
+  height: 14px;
+  border: none;
+  vertical-align: text-top;
+}
+
+
+a.scRibbonToolbarLargeButton {
+  color: #303030;
+  cursor: default;
+  float: left;
+  padding: 5px 6px 2px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarLargeButton:active,
+.scRibbon a.scRibbonToolbarLargeButton:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 4px 5px 1px 5px;
+}
+
+.scRibbon a.scRibbonToolbarLargeButton:hover {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+}
+
+.scRibbon .scRibbonToolbarLargeButtonIcon {
+	  border: none;
+	  display: block;
+	  margin: 0 0;
+	  height: 24px;
+	  width: 24px;	  
+}
+
+.scRibbon a.scRibbonToolbarLargeButtonDown {
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonlargeButtonDown.png) repeat-x;
+  border: 1px solid;
+  border-color: #8e8165 #9f937c #868686 #9f937c;
+  color: black;
+  cursor: default;
+  float: left;
+  padding: 4px 5px 1px 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarLargeButtonDown:active {
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+}
+
+.scRibbon a.scRibbonToolbarLargeButtonDown:hover {
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+}
+
+.scRibbonToolbarLargeButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  float: left;
+  padding: 5px 6px 2px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarLargeButtonIconDisabled {
+  border: none;
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+.scRibbonToolbarLargeButtonIconGrayed {
+  display: block;
+  width: 24px;
+  margin: 0 auto;
+}
+
+.scRibbon a.scRibbonToolbarLargeGalleryButton {
+  color: #303030;
+  cursor: default;
+  float: left;
+  padding: 5px 6px 2px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarLargeGalleryButton:active,
+.scRibbon a.scRibbonToolbarLargeGalleryButton:hover {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 4px 5px 1px 5px;
+}
+
+.scRibbon a.scRibbonToolbarLargeGalleryButton:hover {
+}
+
+.scRibbonToolbarLargeGalleryButtonIcon {
+  border: none;
+  display: block;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+.scRibbonToolbarLargeGalleryButtonGlyph {
+  border: none;
+  height: 5px;
+  margin: 0px 0px 0px 3px;
+  width: 7px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarLargeGalleryButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  float: left;
+  padding: 3px 6px 2px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarLargeGalleryButtonIconDisabled {
+  border: none;
+  display: block;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.scRibbonToolbarLargeGalleryButtonIconGrayed {
+  display: block;
+  width: 24px;
+  margin: 0 auto;
+}
+
+.scRibbonToolbarLargeComboButtonTopDisabled {
+  display: block;
+  color: #303030;
+  cursor: default;
+  text-align: center;
+  white-space: nowrap;
+  padding: 2px 8px 0px 6px;
+}
+
+.scRibbonToolbarLargeGalleryButtonGlyphDisabled {
+  border: none;
+  height: 5px;
+  margin: 0px 0px 0px 3px;
+  width: 7px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarLargeComboButton {
+  float: left;
+  padding: 0px;
+}
+
+.scRibbonToolbarLargeComboButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  float: left;
+  padding: 0px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarLargeComboButtonDown {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonDown.png) repeat-x;
+  float: left;
+  padding: 0px 0px 0px 0px;
+}
+
+.scRibbon a.scRibbonToolbarLargeComboButtonTop,
+.scRibbon a.scRibbonToolbarLargeComboButtonBottom {
+  display: block;
+  color: #303030;
+  cursor: default;
+  text-align: center;
+  white-space: nowrap;
+  padding: 2px 6px 2px 6px;
+}
+
+.scRibbon a.scRibbonToolbarLargeComboButtonBottom {
+  padding-top: 1px;
+}
+
+.scRibbon a.scRibbonToolbarLargeComboButtonTop:active,
+.scRibbon a.scRibbonToolbarLargeComboButtonTop:hover {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 1px 5px 1px 5px;
+}
+
+.scRibbon a.scRibbonToolbarLargeComboButtonTop:hover {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+}
+
+.scRibbon a.scRibbonToolbarLargeComboButtonBottom:active,
+.scRibbon a.scRibbonToolbarLargeComboButtonBottom:hover {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 0px 5px 1px 5px;
+}
+
+.scRibbon a.scRibbonToolbarLargeComboButtonBottom:hover {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+}
+
+.scRibbon .scRibbonToolbarLargeComboButtonIcon {
+  border: none;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.scRibbon .scRibbonToolbarLargeComboButtonGlyph {
+  border: none;
+  height: 5px;
+  margin: 0px 0px 0px 3px;
+  width: 7px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarSmallButtons {
+  float:left;
+  white-space:nowrap;
+}
+
+
+/* can be used outside of the ribbon */
+a.scRibbonToolbarSmallButton {
+  color: #303030;
+  cursor: default;
+  display: block;
+  padding: 4px 6px 3px 6px;
+  white-space: nowrap;
+  position: relative;
+}
+
+a.scRibbonToolbarSmallButton:active,
+a.scRibbonToolbarSmallButton:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #d2c08e #ccc2a3 #d2c08e;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x;
+  padding: 3px 5px 2px 5px; 
+}
+
+.scRibbonToolbarSmallButton:hover {
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+}
+
+a.scRibbonToolbarSmallButtonDown {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonDown.png) repeat-x;
+  color: black;
+  cursor: default;
+  display: block;
+  padding: 3px 5px 3px 5px;
+  white-space: nowrap;
+}
+
+a.scRibbonToolbarSmallButtonDown:active,
+a.scRibbonToolbarSmallButtonDown:hover {
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x;
+}
+
+a.scRibbonToolbarSmallButtonDown:hover {
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+}
+
+.scRibbonToolbarSmallButtonIcon {
+  border: none;
+  height: 16px;
+  margin: -1px 4px 0px 0px;
+  vertical-align: text-top;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  display: block;
+  padding: 4px 6px 3px 6px;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarSmallButtonIconDisabled {
+  border: none;
+  height: 16px;
+  margin: -1px 4px 0px 0px;
+  vertical-align: text-top;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallButtonIconGrayed {
+  width: 16px;
+}
+
+.scRibbonToolbarSmallButtonPrefix {
+  font: 8pt arial narrow, 8pt arial, 8pt tahoma;
+  color: #666666;
+  padding: 0px 4px 0px 0px;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+}
+
+a:hover .scRibbonToolbarSmallButtonPrefix {
+  right: -1px;
+}
+
+.scRibbon a.scRibbonToolbarSmallGalleryButton {
+  color: #303030;
+  cursor: default;
+  display: block;
+  padding: 4px 6px 3px 6px;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarSmallGalleryButton:active,
+.scRibbon a.scRibbonToolbarSmallGalleryButton:hover {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x;
+  padding:3px 5px 2px 5px;
+}
+
+.scRibbon a.scRibbonToolbarSmallGalleryButton:hover {
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+}
+
+.scRibbonToolbarSmallGalleryButtonIcon {
+  border: none;
+  height: 16px;
+  margin: 0px 4px 0px 0px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallGalleryButtonGlyph {
+  border: none;
+  height: 5px;
+  margin: 0px 0px 0px 3px;
+  width: 7px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarSmallGalleryButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  display: block;
+  padding: 4px 6px 3px 6px;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarSmallGalleryButtonIconDisabled {
+  border: none;
+  height: 16px;
+  margin: 0px 4px 0px 0px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallGalleryButtonIconGrayed {
+  width: 16px;
+}
+
+.scRibbonToolbarSmallGalleryButtonGlyphDisabled {
+  border: none;
+  height: 5px;
+  margin: 0px 0px 0px 3px;
+  width: 7px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarPanel {
+  float: left;
+}
+
+.scRibbonToolbarSeperator {
+  display: inline;
+  padding: 4px 0px 0px 0px;
+  vertical-align: top;
+  float: left;
+}
+
+.scRibbonToolbarSeperatorLine {
+  height: 36px;
+  display: block;
+  border-left:1px solid #e5e7ea;
+  background: #9ea3a6;
+  margin: 0px 4px 0px 4px;
+}
+
+.scRibbonToolbarText {
+  color: black;
+  cursor: default;
+  float: left;
+  padding: 2px 6px 2px 6px;
+  white-space: nowrap;
+  background: white;
+  border: 1px solid #999999;
+  margin: 2px 2px 0px 1px;
+  height: 35px;
+}
+
+.scRibbonToolbarScrollbox {
+  color: black;
+  cursor: default;
+  float: left;
+  white-space: nowrap;
+  padding: 0px 24px 0px 0px;
+  height: 44px;
+}
+
+.scRibbonCheckbox {
+  vertical-align: middle;
+}
+
+.scRibbonCombobox {
+  background: #e7eaf1;
+  border: 1px solid #b1bbc6;
+  font: 8pt tahoma;
+  vertical-align: middle;
+}
+
+.scRibbonSelect {
+  background: #e7eaf1;
+  border: 1px solid #b1bbc6;
+  font: 8pt tahoma;
+  margin: 1px 0px 1px 0px;
+}
+
+.scRibbonTranslatePanel {
+  padding:0px 6px 0px 6px;
+  float:left;
+}
+
+.scRibbonTranslatePanelRow {
+  padding: 2px 0px 1px 0px;
+}
+
+.scRibbonTranslatePanel table td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.scRibbonTranslatePanelCompare {
+  padding: 0px 4px 0px 0px;
+  text-align: right;
+}
+
+.scRibbonTranslatePanelLanguage {
+  padding: 0px 4px 0px 0px;
+  text-align: right;
+}
+
+.scRibbonToolbarToolButtonGroup {
+  background: #b5b7b7 url(/sitecore/shell/themes/standard/images/RibbonToolButton.png);
+  border: 1px solid #a0a0a0;
+  display: inline;
+  margin: 1px 2px 1px 2px;
+}
+
+.scRibbon a.scRibbonToolbarToolButton {
+  border-left: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #c9c9c9;
+  border-bottom: 1px solid #f4f4f4;
+  color: #303030;
+  cursor: default;
+  padding: 0px 4px 0px 4px;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarToolButton:active {
+  background: #ebeced;
+}
+
+.scRibbon a.scRibbonToolbarToolButton:hover {
+  background: #ebeced;
+}
+
+.scRibbonToolbarToolButtonIcon {
+  border: none;
+  height: 16px;
+  margin: 3px 0px 0px 0px;
+  width: 16px;
+}
+
+.scRibbonToolbarToolButtonDisabled {
+  border-left: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #c9c9c9;
+  border-bottom: 1px solid #f4f4f4;
+  color: #8d8d8d;
+  cursor: default;
+  padding: 0px 4px 0px 4px;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarToolButtonIconDisabled {
+  border: none;
+  height: 16px;
+  width: 16px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarToolButtonIconGrayed {
+  width: 16px;
+  height: 16px;
+  margin: 3px 0px 0px 0px;
+}
+
+.scEditorToolTipFrame {
+  position: absolute;
+  height: 125;
+  width: 200;
+  border: none;
+}
+
+.scRibbon a.scRibbonToolbarLargeTextButton {
+  color: #303030;
+  cursor: default;
+  float: left;
+  height: 44px;
+  padding: 4px;
+  text-align: center;
+}
+
+.scRibbon a.scRibbonToolbarLargeTextButton:active,
+.scRibbon a.scRibbonToolbarLargeTextButton:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 3px;
+}
+
+.scRibbon a.scRibbonToolbarLargeTextButton:hover {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;  
+}
+
+.scRibbonToolbarLargeTextButtonText {
+  height: 33px;
+  display: block;
+  padding: 1px 2px 1px 2px;
+  border: 1px solid #e9e9e9;
+  background: white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.scRibbon a.scRibbonToolbarLargeTextButtonDown {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonDown.png) repeat-x;
+  border: 1px solid;
+  border-color: #8e8165 #9f937c #868686 #9f937c;
+  color: black;
+  cursor: default;
+  float: left;
+  padding: 4px 5px 1px 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarLargeTextButtonDown:active,
+.scRibbon a.scRibbonToolbarLargeTextButtonDown:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 4px 5px 1px 5px;
+}
+
+.scRibbon a.scRibbonToolbarLargeTextButtonDown:hover {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+}
+
+.scRibbonToolbarLargeTextButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  float: left;
+  padding: 5px 6px 2px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarLargeIconButton {
+  display: block;
+  color: #303030;
+  cursor: default;
+  float: left;
+  height: 32px;
+  padding: 4px;
+  text-align: center;
+}
+
+.scRibbonToolbarLargeIconButtonDisabled {
+  color: #8d8d8d;
+  padding: 5px 6px 2px 6px;
+  white-space: nowrap;
+}
+
+
+.scRibbon a.scRibbonToolbarLargeIconButton:active {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 3px;
+}
+
+.scRibbon a.scRibbonToolbarLargeIconButton:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+  padding: 3px;
+}
+
+.scRibbonToolbarLargeIconButtonIcon {
+  border: none;
+  height: 24px;
+  width: 24px;
+}
+
+.scRibbon a.scRibbonToolbarLargeIconButtonDown {
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonDown.png) repeat-x;
+  border: 1px solid;
+  border-color: #8e8165 #9f937c #868686 #9f937c;
+  color: black;
+  cursor: default;
+  float: left;
+  height: 32px;
+  padding: 4px 5px 1px 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarLargeIconButtonDown:active,
+.scRibbon a.scRibbonToolbarLargeIconButtonDown:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/LargeButtonActive.png) repeat-x;
+  padding: 4px 5px 1px 5px;
+}
+
+.scRibbon a.scRibbonToolbarLargeIconButtonDown:hover {
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+}
+
+.scRibbonToolbarLargeIconButtonIconGrayed {
+  border: none;
+  height: 24px;
+  width: 24px;
+}
+
+.scRibbonToolbarSmallCheckButton {
+  color: #303030;
+  cursor: default;
+  display: block;
+  padding: 2px 6px 4px 6px;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarSmallCheckButtonCheckbox {
+  height: 16px;
+  margin: 0px 2px 0px 0px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallCheckButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  display: block;
+  padding: 2px 6px 4px 6px;
+  white-space: nowrap;
+}
+
+
+.scRibbonToolbarSmallInputBox,
+.scRibbonToolbarSmallInputBoxDisabled {
+  color: #303030;
+  cursor: default;
+  display: block;
+  padding: 0px 6px 2px 6px;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarSmallInputBoxDisabled {
+  color: #8d8d8d;
+}
+
+.scRibbonToolbarSmallInputBoxInput,
+.scRibbonToolbarSmallInputBoxInputDisabled  {
+  height: 18px;
+  margin: 0px 2px 0px 4px;
+  vertical-align: middle;
+  width: 40px;
+  font: 8pt tahoma;
+  border: 1px solid #898989;
+}
+
+.scRibbonToolbarSmallInputBoxInputDisabled {
+  background: #e0e0e0;
+}
+
+.scRibbonToolbarSmallInputBoxIcon,
+.scRibbonToolbarSmallInputBoxIconDisabled {
+  border: none;
+  height: 16px;
+  margin: 0px 2px 0px 0px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallInputBoxIconGrayed {
+  width: 16px;
+}
+
+
+.scRibbonToolbarSmallDropDownBox,
+.scRibbonToolbarSmallDropDownBoxDisabled {
+  color: #303030;
+  cursor: default;
+  display: block;
+  padding: 1px 6px 1px 6px;
+  white-space: nowrap;
+}
+
+.scRibbonToolbarSmallDropDownBoxDisabled {
+  color: #8d8d8d;
+}
+
+.scRibbonToolbarSmallDropDownBoxInput {
+  height: 18px;
+  margin: 0px 2px 0px 4px;
+  vertical-align: middle;
+  font: 8pt tahoma;
+  border: 1px solid #898989;
+}
+
+.scRibbonToolbarSmallDropDownBoxIcon,
+.scRibbonToolbarSmallDropDownBoxIconDisabled  {
+  border: none;
+  height: 16px;
+  margin: 0px 2px 0px 0px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallDropDownBoxIconGrayed {
+  width: 16px;
+}
+
+.scRibbonToolbarSmallComboButton {
+  display: block;
+  white-space: nowrap;
+  height: 18px;
+  margin: 4px 0px 0px 0px;
+}
+
+.scRibbonToolbarSmallComboButtonDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  display: block;
+  padding: 2px 6px 4px 6px;
+  white-space: nowrap;
+}
+
+
+.scRibbonToolbarSmallComboButtonLeftDisabled {
+  color: #8d8d8d;
+  cursor: default;
+  padding: 4px 6px 3px 6px;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarSmallComboButtonLeft {
+  color: #303030;
+  cursor: default;
+  padding: 2px 2px 4px 6px;
+  white-space: nowrap;
+}
+
+.scRibbon a.scRibbonToolbarSmallComboButtonLeft:active,
+.scRibbon a.scRibbonToolbarSmallComboButtonLeft:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x;
+  padding: 1px 1px 3px 5px;
+}
+
+.scRibbon a.scRibbonToolbarSmallComboButtonLeft:hover {
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+}
+
+.scRibbon a.scRibbonToolbarSmallComboButtonRight {
+  color: #303030;
+  cursor: default;
+  padding: 2px 3px 4px 3px;
+  height: 21px;
+  white-space: nowrap;
+  clear: right;
+}
+
+.scRibbon a.scRibbonToolbarSmallComboButtonRight:active,
+.scRibbon a.scRibbonToolbarSmallComboButtonRight:hover {
+  border: 1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffe594 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x;
+  padding: 1px 2px 3px 2px;
+}
+
+.scRibbon a.scRibbonToolbarSmallComboButtonRight:hover {
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+}
+
+.scRibbonToolbarSmallComboButtonIcon,
+.scRibbonToolbarSmallComboButtonIconDisabled {
+  border: none;
+  height: 16px;
+  margin: -1px 4px 0px 0px;
+  vertical-align: text-top;
+  width: 16px;
+}
+
+.scRibbonToolbarSmallComboButtonGlyph {
+  border: none;
+  height: 5px;
+  vertical-align: text-top;
+  margin: 5px 0px 0px 0px;
+  width: 7px;
+}
+
+.scRibbonToolbarSmallComboButtonGlyphDisabled {
+  position: relative;
+  top: -1;
+  left: 5px;
+  border: none;
+  height: 5px;
+  margin: 0px 1px 0px 5px;
+  width: 7px;
+  vertical-align: baseline;
+}
+
+.scRibbonToolbarSmallComboButtonIconGrayed {
+  width: 16px;
+}
+
+.scRibbonGallery {
+  float: left;
+  white-space: nowrap;
+}
+
+.scRibbonGalleryList {
+  color: black;
+  cursor: default;
+  float: left;
+  height: 44px;
+  overflow: hidden;
+  padding: 0px;
+  white-space: nowrap;
+  width: 200px;
+  background: #dae2e2;
+  border-left: 1px solid #a9b1bb;
+}
+
+.scRibbonPanelButtons {
+  float: left;
+  background: #a9b1b8;
+  padding: 0px 1px 0px 1px;
+  vertical-align: top;
+}
+
+.scRibbonPanelUp {
+  border: none;
+  display: block;
+  height: 14px;
+  margin: 0px 0px 1px 0px;
+  width: 13px;
+}
+
+.scRibbonPanelDown {
+  border: none;
+  display: block;
+  height: 14px;
+  margin: 0px 0px 1px 0px;
+  width: 13px;
+}
+
+.scRibbonPanelUp2 {
+  border: none;
+  display: block;
+  height: 21px;
+  margin: 0px 0px 1px 0px;
+  width: 13px;
+}
+
+.scRibbonPanelDown2 {
+  border: none;
+  display: block;
+  height: 21px;
+  margin: 0px 0px 1px 0px;
+  width: 13px;
+}
+
+.scRibbonPanelOpen {
+  border: none;
+  display: block;
+  height: 14px;
+  width: 13px;
+}

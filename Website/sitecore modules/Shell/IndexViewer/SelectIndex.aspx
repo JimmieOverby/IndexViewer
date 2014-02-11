@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SelectIndex.aspx.cs" Inherits="IndexViewer.SelectIndex" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.HtmlControls" Assembly="Sitecore.Kernel" %>
+<%@ Register TagPrefix="sc" Assembly="Sitecore.Kernel" Namespace="Sitecore.Web.UI.WebControls" %>
+<%@ Register TagPrefix="sc" Assembly="Sitecore.Kernel" Namespace="Sitecore.Web.UI.WebControls.Ribbons" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -30,16 +32,6 @@
                     </asp:DropDownList>
                 </td>
             </tr>
-            <span id="DatabaseSelectorPanel" runat="server">
-            <tr>
-                <td>Database</td>
-                <td>
-                    <asp:DropDownList CssClass="Selector" ID="DatabaseSelector" runat="server" AutoPostBack="True" 
-                      onselectedindexchanged="DatabaseSelector_SelectedIndexChanged">
-                    </asp:DropDownList>
-                </td>
-            </tr>
-            </span>
             <tr>
                 <td>Index</td>
                 <td>

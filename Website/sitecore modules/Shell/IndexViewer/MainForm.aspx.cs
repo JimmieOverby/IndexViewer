@@ -37,13 +37,14 @@ namespace IndexViewer
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            SearchControl.Error                 += new EventHandler(CustomControl_Error);
-            DocumentsOverviewControl.Error      += new EventHandler(CustomControl_Error);
-            IndexOverview.Error          += new EventHandler(CustomControl_Error);
-            Client.AjaxScriptManager.OnExecute  += new AjaxScriptManager.ExecuteDelegate(AjaxScriptManager_OnExecute); 
+            LuceneSearchControl.Error += new EventHandler(CustomControl_Error);
+            SitecoreSearchControl.Error += new EventHandler(CustomControl_Error);
+            DocumentsOverviewControl.Error += new EventHandler(CustomControl_Error);
+            IndexOverview.Error += new EventHandler(CustomControl_Error);
+            Client.AjaxScriptManager.OnExecute += new AjaxScriptManager.ExecuteDelegate(AjaxScriptManager_OnExecute);
         }
 
-        
+
         //----------------------------------------------------------------------------------
         /// <summary>
         /// Handles the Load event of the Page control.
@@ -173,13 +174,33 @@ namespace IndexViewer
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         /// <remark>Created 07/01/2009 10:47 by jm</remark>
         //----------------------------------------------------------------------------------
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void LuceneSearchButton_Click(object sender, EventArgs e)
         {
             try
             {
                 if (SessionManager.Instance.CurrentIndex != null)
                 {
-                    ShowSearch();
+                    ShowLuceneSearch();
+                }
+                else
+                {
+                    IndexTabs.ActiveViewIndex = 0;
+                    SetViewButtonActive(false);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorResolver.ResolveError(ex, this);
+            }
+        }
+
+        protected void SitecoreSearchButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SessionManager.Instance.CurrentIndex != null)
+                {
+                    ShowSitecoreSearch();
                 }
                 else
                 {
@@ -225,10 +246,11 @@ namespace IndexViewer
                         IndexTabs.ActiveViewIndex = 0;
                         SetViewButtonActive(true);
 
-                        SheerResponse.Eval(String.Format("disableBtn('{0}', false); disableBtn('{1}', false); disableBtn('{2}', false);",
+                        SheerResponse.Eval(String.Format("disableBtn('{0}', false); disableBtn('{1}', false); disableBtn('{2}', false); disableBtn('{3}', false);",
                             OverviewButton.UniqueID,
                             DocumentsButton.UniqueID,
-                            SearchButton.UniqueID));
+                            LuceneSearchButton.UniqueID,
+                            SitecoreSearchButton.UniqueID));
 
                         SheerResponse.Eval(String.Format("clickBtn('{0}');", OverviewButton.UniqueID));
 
@@ -259,7 +281,7 @@ namespace IndexViewer
 
 
         #region private methods
-        
+
         private void CheckUser()
         {
             if (Sitecore.Context.User == null ||
@@ -290,8 +312,8 @@ namespace IndexViewer
 
 
         #region Visibility
-        
-        
+
+
         //----------------------------------------------------------------------------------
         /// <summary>
         /// Sets the view buttons to be either active or inactive.
@@ -303,11 +325,12 @@ namespace IndexViewer
         {
             OverviewButton.Enabled = value;
             DocumentsButton.Enabled = value;
-            SearchButton.Enabled = value;
             if (SessionManager.Instance.CurrentIndex != null && SessionManager.Instance.CurrentIndex is ContentSearchIndex)
                 LinqButton.Enabled = value;
             else
                 LinqButton.Enabled = false;
+            LuceneSearchButton.Enabled = value;
+            SitecoreSearchButton.Enabled = value;
         }
 
 
@@ -324,8 +347,12 @@ namespace IndexViewer
 
             OverviewButton.CssClass = "ButtonSelectorSelected";
             DocumentsButton.CssClass = "ButtonSelector";
-            SearchButton.CssClass = "ButtonSelector";
+			
             LinqButton.CssClass = "ButtonSelector";
+
+            LuceneSearchButton.CssClass = "ButtonSelector";
+            SitecoreSearchButton.CssClass = "ButtonSelector";
+
         }
 
         //----------------------------------------------------------------------------------
@@ -340,8 +367,12 @@ namespace IndexViewer
 
             OverviewButton.CssClass = "ButtonSelector";
             DocumentsButton.CssClass = "ButtonSelectorSelected";
-            SearchButton.CssClass = "ButtonSelector";
+
             LinqButton.CssClass = "ButtonSelector";
+
+            LuceneSearchButton.CssClass = "ButtonSelector";
+            SitecoreSearchButton.CssClass = "ButtonSelector";
+
         }
 
         //----------------------------------------------------------------------------------
@@ -350,22 +381,34 @@ namespace IndexViewer
         /// </summary>
         /// <remark>Created 07/01/2009 10:46 by jm</remark>
         //----------------------------------------------------------------------------------
-        private void ShowSearch()
+        private void ShowLuceneSearch()
         {
             IndexTabs.ActiveViewIndex = 3;
             OverviewButton.CssClass = "ButtonSelector";
             DocumentsButton.CssClass = "ButtonSelector";
-            SearchButton.CssClass = "ButtonSelectorSelected";
-            LinqButton.CssClass = "ButtonSelector";
+			LuceneSearchButton.CssClass = "ButtonSelectorSelected";
+            SitecoreSearchButton.CssClass = "ButtonSelector";
+			LinqButton.CssClass = "ButtonSelector";
         }
 
         private void ShowLINQ()
+		{
+			IndexTabs.ActiveViewIndex = 5;
+            OverviewButton.CssClass = "ButtonSelector";
+            DocumentsButton.CssClass = "ButtonSelector";
+			LuceneSearchButton.CssClass = "ButtonSelector";
+            SitecoreSearchButton.CssClass = "ButtonSelector";
+			LinqButton.CssClass = "ButtonSelectorSelected";
+        }
+
+        private void ShowSitecoreSearch()
         {
             IndexTabs.ActiveViewIndex = 4;
             OverviewButton.CssClass = "ButtonSelector";
             DocumentsButton.CssClass = "ButtonSelector";
-            SearchButton.CssClass = "ButtonSelector";
-            LinqButton.CssClass = "ButtonSelectorSelected";
+			LuceneSearchButton.CssClass = "ButtonSelector";
+            SitecoreSearchButton.CssClass = "ButtonSelectorSelected";
+			LinqButton.CssClass = "ButtonSelector";
         }
 
 

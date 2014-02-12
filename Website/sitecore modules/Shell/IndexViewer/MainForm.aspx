@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainForm.aspx.cs" Inherits="IndexViewer.MainForm" %>
 <%@ Register src="IndexOverview.ascx" tagname="IndexOverview" tagprefix="IndexViewer" %>
 <%@ Register src="DocumentsOverview.ascx" tagname="DocumentsOverview" tagprefix="IndexViewer" %>
-<%@ Register src="Search.ascx" tagname="Search" tagprefix="IndexViewer" %>
+<%@ Register src="LuceneSearch.ascx" tagname="LuceneSearch" tagprefix="IndexViewer" %>
+<%@ Register src="SitecoreSearch.ascx" tagname="SitecoreSearch" tagprefix="IndexViewer" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.HtmlControls" Assembly="Sitecore.Kernel" %>
 <%@ Register TagPrefix="sc" Assembly="Sitecore.Kernel" Namespace="Sitecore.Web.UI.WebControls" %>
 <%@ Register TagPrefix="sc" Assembly="Sitecore.Kernel" Namespace="Sitecore.Web.UI.WebControls.Ribbons" %>
@@ -66,11 +67,14 @@
                 <asp:Button id="DocumentsButton" OnClick="DocumentsButton_Click" CssClass="ButtonSelector" runat="server" 
                     Text="Documents">
                 </asp:Button>
-                <asp:Button id="SearchButton" OnClick="SearchButton_Click" CssClass="ButtonSelector" runat="server" 
-                    Text="Search">
-                </asp:Button>            
-                <asp:Button id="LinqButton" CssClass="ButtonSelector" runat="server" Text="LINQ" OnClick="LinqButton_Click">
-                </asp:Button>            
+                <asp:Button id="LuceneSearchButton" OnClick="LuceneSearchButton_Click" CssClass="ButtonSelector" runat="server" 
+                    Text="Lucene.NET API">
+                </asp:Button>
+                <asp:Button id="SitecoreSearchButton" OnClick="SitecoreSearchButton_Click" CssClass="ButtonSelector" runat="server" 
+                    Text="Sitecore.Search API">
+                </asp:Button>
+				<asp:Button id="LinqButton" CssClass="ButtonSelector" runat="server" Text="LINQ" OnClick="LinqButton_Click">
+                </asp:Button>   
             </td>
         </tr>
         <tr style="width:100%; height:100%; background-color:#EEE;">
@@ -113,11 +117,21 @@
                         </table>
                     </asp:View>
                     
-                    <asp:View ID="SearchTab" runat="server">
+                    <asp:View ID="LuceneSearchTab" runat="server">
                         <table cellspacing="0" style="width:100%; height:100%; background-color:#EEE;">
                             <tr>
                                 <td>
-                                    <IndexViewer:Search ID="SearchControl" runat="server"/>        
+                                    <IndexViewer:LuceneSearch ID="LuceneSearchControl" runat="server"/>        
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:View>
+
+                    <asp:View ID="SitecoreSearchTab" runat="server">
+                        <table cellspacing="0" style="width:100%; height:100%; background-color:#EEE;">
+                            <tr>
+                                <td>
+                                    <IndexViewer:SitecoreSearch ID="SitecoreSearchControl" runat="server"/>        
                                 </td>
                             </tr>
                         </table>

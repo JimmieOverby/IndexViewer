@@ -82,6 +82,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\ExtensionMethods.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\base\BaseSearcher.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\base\BaseSearchResultCollection.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\SitecoreSearchResultCollection.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\SitecoreSearcher.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\SitecoreQueryType.ascx.cs">
+      <DependentUpon>SitecoreQueryType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\IndexViewer\SitecoreQueryType.ascx.designer.cs">
+      <DependentUpon>SitecoreQueryType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\IndexViewer\SitecoreSearch.ascx.cs">
+      <DependentUpon>SitecoreSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\IndexViewer\SitecoreSearch.ascx.designer.cs">
+      <DependentUpon>SitecoreSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\IndexViewer\QueryOccurance.ascx.cs">
+      <DependentUpon>QueryOccurance.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\IndexViewer\QueryOccurance.ascx.designer.cs">
+      <DependentUpon>QueryOccurance.ascx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore modules\Shell\IndexViewer\DocumentsOverview.ascx.cs">
       <DependentUpon>DocumentsOverview.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,13 +149,21 @@
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\IndexResolver\SearchIndexResolver.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Index\BaseIndex.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Index\ContentSearchIndex.cs" />
-    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\IndexSearch.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\LuceneSearcher.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Index\IndexType.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Index\SearchIndex.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Interfaces\IIndex.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Interfaces\IIndexResolver.cs" />
-    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\SearchResultCollection.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\QueryInfo.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\Search\LuceneSearchResultCollection.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\SessionManager\SessionManager.cs" />
+    <Compile Include="sitecore modules\Shell\IndexViewer\LuceneQueryType.ascx.cs">
+      <DependentUpon>LuceneQueryType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\IndexViewer\LuceneQueryType.ascx.designer.cs">
+      <DependentUpon>LuceneQueryType.ascx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore modules\Shell\IndexViewer\MainForm.aspx.cs">
       <DependentUpon>MainForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,12 +185,12 @@
     <Compile Include="sitecore modules\Shell\IndexViewer\RebuildRemoteStatus.aspx.designer.cs">
       <DependentUpon>RebuildRemoteStatus.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sitecore modules\Shell\IndexViewer\Search.ascx.cs">
-      <DependentUpon>Search.ascx</DependentUpon>
+    <Compile Include="sitecore modules\Shell\IndexViewer\LuceneSearch.ascx.cs">
+      <DependentUpon>LuceneSearch.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sitecore modules\Shell\IndexViewer\Search.ascx.designer.cs">
-      <DependentUpon>Search.ascx</DependentUpon>
+    <Compile Include="sitecore modules\Shell\IndexViewer\LuceneSearch.ascx.designer.cs">
+      <DependentUpon>LuceneSearch.ascx</DependentUpon>
     </Compile>
     <Compile Include="sitecore modules\Shell\IndexViewer\SelectIndex.aspx.cs">
       <DependentUpon>SelectIndex.aspx</DependentUpon>
@@ -186,6 +220,10 @@
     <Content Include="sitecore modules\Shell\IndexViewer\img\methodIcon.png" />
     <Content Include="sitecore modules\Shell\IndexViewer\img\propertyIcon.png" />
     <Content Include="sitecore modules\Shell\IndexViewer\img\spinnerLarge.gif" />
+    <Content Include="sitecore modules\Shell\IndexViewer\SitecoreQueryType.ascx" />
+    <Content Include="sitecore modules\Shell\IndexViewer\SitecoreSearch.ascx" />
+    <Content Include="sitecore modules\Shell\IndexViewer\QueryOccurance.ascx" />
+    <Content Include="sitecore modules\Shell\IndexViewer\LuceneQueryType.ascx" />
     <Content Include="sitecore modules\Shell\IndexViewer\MainForm.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +236,7 @@
     <Content Include="sitecore modules\Shell\IndexViewer\scripts\jquery-1.10.2.min.js" />
     <Content Include="sitecore modules\Shell\IndexViewer\scripts\jquery-ui-1.10.4.custom.min.js" />
     <Content Include="sitecore modules\Shell\IndexViewer\scripts\jquery.caret.js" />
-    <Content Include="sitecore modules\Shell\IndexViewer\Search.ascx" />
+    <Content Include="sitecore modules\Shell\IndexViewer\LuceneSearch.ascx" />
     <Content Include="sitecore modules\Shell\IndexViewer\SelectIndex.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -210,16 +248,7 @@
     <None Include="data\packages\IndexViewer-1.2.0.zip" />
     <Content Include="sitecore modules\Web\IndexViewer\AvailableIndexes.aspx" />
     <Content Include="sitecore modules\Web\IndexViewer\IndexRebuild.aspx" />
-    <Content Include="Web.config" />
-    <Content Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

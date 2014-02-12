@@ -76,13 +76,22 @@ namespace IndexViewer {
         protected global::System.Web.UI.WebControls.Button DocumentsButton;
         
         /// <summary>
-        /// SearchButton control.
+        /// LuceneSearchButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchButton;
+        protected global::System.Web.UI.WebControls.Button LuceneSearchButton;
+        
+        /// <summary>
+        /// SitecoreSearchButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SitecoreSearchButton;
         
         /// <summary>
         /// LinqButton control.
@@ -148,22 +157,40 @@ namespace IndexViewer {
         protected global::IndexViewer.sitecore_modules.Shell.IndexViewer.DocumentsOverview DocumentsOverviewControl;
         
         /// <summary>
-        /// SearchTab control.
+        /// LuceneSearchTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View SearchTab;
+        protected global::System.Web.UI.WebControls.View LuceneSearchTab;
         
         /// <summary>
-        /// SearchControl control.
+        /// LuceneSearchControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::IndexViewer.Search SearchControl;
+        protected global::IndexViewer.LuceneSearch LuceneSearchControl;
+        
+        /// <summary>
+        /// SitecoreSearchTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View SitecoreSearchTab;
+        
+        /// <summary>
+        /// SitecoreSearchControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::IndexViewer.SitecoreSearch SitecoreSearchControl;
         
         /// <summary>
         /// LinqTab control.

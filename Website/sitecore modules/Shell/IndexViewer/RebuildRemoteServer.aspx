@@ -10,29 +10,32 @@
 <body style="background:transparent; background-color: #EEE; height: 100%; overflow:hidden; width:300px">
     <form id="form1" runat="server">
     
-    <div class="selectRemoteIndex">
-      <h1>Select remote index</h1>
-      <div class="selectionArea">
-        <div>
-          <label>Select server:</label>
-          <asp:DropDownList runat="server" ID="ServerDropDown" 
-            onselectedindexchanged="ServerDropDown_SelectedIndexChanged" AutoPostBack="true" CssClass="dropDownBox"></asp:DropDownList>
+        <div class="selectRemoteIndex" runat="server" ID="SelectRemoteIndexArea">
+          <h1>Select remote index</h1>
+          <div class="selectionArea">
+            <div>
+              <label>Select server:</label>
+              <asp:DropDownList runat="server" ID="ServerDropDown" 
+                onselectedindexchanged="ServerDropDown_SelectedIndexChanged" AutoPostBack="true" CssClass="dropDownBox"></asp:DropDownList>
+            </div>
+            <div>
+              <label>Select index:</label>
+              <asp:DropDownList runat="server" ID="IndexDropDown" Enabled="false" AutoPostBack="true" 
+                onselectedindexchanged="IndexDropDown_SelectedIndexChanged" CssClass="dropDownBox"></asp:DropDownList>
+            </div>
+          </div>
+         <div>
+           <div class="buttonArea">
+              <asp:Button runat="server" ID="RebuildButton" Text="Rebuild" Enabled="false" 
+                 onclick="RebuildButton_Click" CssClass="rebuildButton"/>
+              <asp:Button runat="server" ID="CancelButton" Text="Cancel" 
+                onclick="CancelButton_Click" CssClass="cancelButton"/>
+            </div>
+          </div>
         </div>
-        <div>
-          <label>Select index:</label>
-          <asp:DropDownList runat="server" ID="IndexDropDown" Enabled="false" AutoPostBack="true" 
-            onselectedindexchanged="IndexDropDown_SelectedIndexChanged" CssClass="dropDownBox"></asp:DropDownList>
+        <div runat="server" ID="NotAllowedArea" visible="false">
+            You need to enable remote rebuilding - remember to set the security token
         </div>
-      </div>
-     <div>
-       <div class="buttonArea">
-          <asp:Button runat="server" ID="RebuildButton" Text="Rebuild" Enabled="false" 
-             onclick="RebuildButton_Click" CssClass="rebuildButton"/>
-          <asp:Button runat="server" ID="CancelButton" Text="Cancel" 
-            onclick="CancelButton_Click" CssClass="cancelButton"/>
-        </div>
-      </div>
-    </div>
     </form>
 </body>
 </html>

@@ -31,6 +31,15 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// SelectRemoteIndexArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SelectRemoteIndexArea;
+        
+        /// <summary>
         /// ServerDropDown control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CancelButton;
+        
+        /// <summary>
+        /// NotAllowedArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NotAllowedArea;
     }
 }

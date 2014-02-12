@@ -17,7 +17,7 @@ namespace IndexViewer.sitecore_modules.Web.IndexViewer
         {
 
             if (!RequestIsValid())
-                throw new InvalidOperationException("No good securityToken");
+                throw new InvalidOperationException("No good securityToken or remote rebuild not allowed");
 
             //Semi-routing
             string methodName = Request.QueryString["method"];
@@ -44,12 +44,7 @@ namespace IndexViewer.sitecore_modules.Web.IndexViewer
 
         private bool RequestIsValid()
         {
-            Item settingsItem = Sitecore.Context.Database.GetItem(new ID(Constants.ItemIds.SettingsItemId));
-            if(settingsItem == null)
-                throw new InvalidOperationException("Cannot find settings item");
-            string enteredToken = settingsItem[Constants.FieldNames.SecurityToken];
-            string tokenSent = Request.QueryString["SecurityToken"];
-            return (enteredToken == tokenSent);
+            return RequestValidator.IsRequestValid(Request.QueryString["SecurityToken"]);
         }
 
         private string GetJobStatus(string jobName)

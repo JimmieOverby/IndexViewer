@@ -213,6 +213,7 @@
     <Compile Include="sitecore modules\Web\IndexViewer\IndexRebuild.aspx.designer.cs">
       <DependentUpon>IndexRebuild.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sitecore modules\Web\IndexViewer\RequestValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="sitecore modules\Shell\IndexViewer\css\jquery-ui.css" />

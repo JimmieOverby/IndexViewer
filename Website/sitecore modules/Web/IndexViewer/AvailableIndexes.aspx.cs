@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Sitecore.Data;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 
 namespace IndexViewer.sitecore_modules.Web.IndexViewer
@@ -14,18 +15,13 @@ namespace IndexViewer.sitecore_modules.Web.IndexViewer
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!RequestIsValid())
-                throw new InvalidOperationException("No good securityToken");
+                throw new InvalidOperationException("No good securityToken or remote rebuild not allowed");
             FillIndexes();
         }
 
         private bool RequestIsValid()
         {
-            Item settingsItem = Sitecore.Context.Database.GetItem(new ID(Constants.ItemIds.SettingsItemId));
-            if (settingsItem == null)
-                throw new InvalidOperationException("IndexViewer not configured correcty. Cannot find settings items");
-            string enteredToken = settingsItem[Constants.FieldNames.SecurityToken];
-            string tokenSent = Request.QueryString["SecurityToken"];
-            return (enteredToken == tokenSent);
+            return RequestValidator.IsRequestValid(Request.QueryString["SecurityToken"]);
         }
 
         private void FillIndexes()

@@ -9,6 +9,7 @@ using Sitecore.Data;
 using System.Net;
 using System.Xml.Linq;
 using Sitecore.Exceptions;
+using Sitecore.Data.Fields;
 
 namespace IndexViewer.sitecore_modules.Shell.IndexViewer
 {
@@ -16,8 +17,28 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsRemoteRebuildEnabled())
+            {
+                NotAllowedArea.Visible = true;
+                SelectRemoteIndexArea.Visible = false;
+                return;
+            }
             if (!Page.IsPostBack)
                 FillServerList();
+        }
+
+        private bool IsRemoteRebuildEnabled()
+        {
+            Item settingsItem = Database.GetDatabase("master").GetItem(new ID(Constants.ItemIds.SettingsItemId));
+            if (settingsItem == null)
+                throw new InvalidOperationException("IndexViewer not configured correcty. Cannot find settings items");
+            CheckboxField enableRemoteRebuild = settingsItem.Fields[Constants.FieldNames.EnableRemoteRebuild];
+            if (enableRemoteRebuild == null)
+                return false;
+            if (!enableRemoteRebuild.Checked)
+                return false;
+
+            return true;
         }
 
         protected void FillServerList()

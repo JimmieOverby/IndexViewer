@@ -11,9 +11,11 @@ namespace IndexViewer
         {
             public const string SettingsItemId = "{CE44221A-6C25-47DE-AFCB-9F68A0825A91}";
         }
+
         public struct FieldNames
         {
             public const string SecurityToken = "Settings_SecurityToken";
+            public const string EnableRemoteRebuild = "Settings_EnableRemoteRebuild";
         }
     }
 }   

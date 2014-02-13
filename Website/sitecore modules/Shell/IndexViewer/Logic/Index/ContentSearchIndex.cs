@@ -50,11 +50,6 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer.Logic.Index
         private Lucene.Net.Index.IndexReader CreateReader()
         {
             return DirectoryReader.Open(((LuceneIndex)_searchIndex).Directory, true);
-
-/*            MethodInfo methodInfo = typeof(LuceneIndex).GetMethod("CreateReader",
-                    BindingFlags.NonPublic | BindingFlags.Instance);
-
-            return methodInfo.Invoke(_searchIndex, new object[]{true}) as IndexReader;         */
         }
 
         public Lucene.Net.Search.IndexSearcher CreateSearcher()

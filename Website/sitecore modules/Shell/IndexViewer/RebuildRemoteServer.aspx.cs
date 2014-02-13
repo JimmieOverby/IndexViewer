@@ -44,7 +44,7 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer
         protected void FillServerList()
         {
             ServerDropDown.Items.Add("Choose server...");
-            Item serverRoot = Database.GetDatabase("master").GetItem(new ID("{F756223A-951C-4B98-8939-F9FCBC1F3C38}"));
+            Item serverRoot = Database.GetDatabase("master").GetItem(new ID(Constants.ItemIds.RemoteServerRoot));
             if (serverRoot == null)
             {
                 throw new ConfigurationException("No server root found on your system");
@@ -72,7 +72,7 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer
             if (!String.IsNullOrEmpty(ServerDropDown.SelectedValue))
             {
                 Item serverItem = Database.GetDatabase("master").GetItem(new ID(ServerDropDown.SelectedValue));
-                string address = serverItem["ServerInfo_Address"];
+                string address = serverItem[Constants.FieldNames.ServerAddress];
                 if (String.IsNullOrEmpty(address))
                 {
                     Response.Write("<script language='javascript'>alert('No address entered for server: " + ServerDropDown.SelectedItem.Text + "');</script>");
@@ -86,7 +86,7 @@ namespace IndexViewer.sitecore_modules.Shell.IndexViewer
         private string GetAddress()
         {
             Item serverItem = Database.GetDatabase("master").GetItem(new ID(ServerDropDown.SelectedValue));
-            string address = serverItem["ServerInfo_Address"];
+            string address = serverItem[Constants.FieldNames.ServerAddress];
             if (!address.StartsWith("http"))
                 address = "http://" + address;
             return address;

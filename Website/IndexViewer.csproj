@@ -141,7 +141,6 @@
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\DynamicLinq\CodeGenerator.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\DynamicLinq\Compiler.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\DynamicLinq\LinqSearchResult.cs" />
-    <Compile Include="sitecore modules\Shell\IndexViewer\Logic\DynamicLinq\MySearchResultItem.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\ExceptionHadling\ErrorResolver.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\ExceptionHadling\ExceptionEventArgs.cs" />
     <Compile Include="sitecore modules\Shell\IndexViewer\Logic\IndexResolver\ContentSearchResolver.cs" />
